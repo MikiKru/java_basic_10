@@ -74,10 +74,12 @@ public class UserController {
                     System.out.println("BŁĄD LOGOWANIA");
                     return false;
                 }
+                System.out.println("BŁAD LOGOWANIA");
                 return false;
             }
         }
         // gdy użytkownik jest nieaktywny
+        System.out.println("BŁAD LOGOWANIA");
         return false;
     }
 
@@ -99,6 +101,8 @@ public class UserController {
         userController.loginUserCustom("c","e");
         userController.loginUserCustom("c","e");
         userController.loginUserCustom("c","e");
+        userController.loginUserCustom("X","X");
+        userController.getAllUsers();
 
     }
 }
