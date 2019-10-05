@@ -82,7 +82,15 @@ public class UserController {
         System.out.println("BŁAD LOGOWANIA");
         return false;
     }
-
+    // metoda zwracająca ilość obiketów w users
+    public Integer usersCount(){
+//        return users.stream().count();
+        return users.size();
+    }
+    // metoda zwracająca ilość użytkowników o podanej roli
+    public Long usersCountByRole(Role role){
+        return users.stream().filter(user -> user.getRole().equals(role)).count();
+    }
     public static void main(String[] args) {
         UserController userController = new UserController();
         userController.registerUser("a","a");
@@ -104,5 +112,7 @@ public class UserController {
         userController.loginUserCustom("X","X");
         userController.getAllUsers();
 
+        System.out.println("Ilość użytkowników: " + userController.usersCount());
+        System.out.println("Ilość administratorów: " + userController.usersCountByRole(Role.ADMIN));
     }
 }
