@@ -11,6 +11,7 @@ public class User {
     private Role role = Role.USER;
     private Boolean status = true;
     private LocalDateTime registerDate = LocalDateTime.now();
+    private Integer loginCounter = 3;
 
     public User(String login, String password) {
         this.login = login;
@@ -18,7 +19,26 @@ public class User {
         // autoinkrementacja id
         this.user_id = global_id;
         global_id ++;
+    }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "user_id=" + user_id +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", role=" + role +
+                ", status=" + status +
+                ", registerDate=" + registerDate +
+                '}';
+    }
+
+    public Integer getLoginCounter() {
+        return loginCounter;
+    }
+
+    public void setLoginCounter(Integer loginCounter) {
+        this.loginCounter = loginCounter;
     }
 
     public Integer getGlobal_id() {
