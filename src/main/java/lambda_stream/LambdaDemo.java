@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+import static java.lang.Math.sqrt;
+
 
 public class LambdaDemo {
     public static void main(String[] args) {
@@ -43,8 +45,24 @@ public class LambdaDemo {
         if(avgValue.isPresent()){
             System.out.println("avgValue: " + avgValue.getAsDouble());
         }
+        // wartość średnia z 4 największych wartości z listy
+        Double avgValueFirst4 = numbers.stream()
+                .sorted(Comparator.comparing(Integer::intValue).reversed())
+                .limit(4)
+                .mapToDouble(Integer::doubleValue)
+                .average()
+                .getAsDouble();
+        System.out.println("avgValueFirst4 = " + avgValueFirst4);
         
+        // zwróć listę pierwiasków kwadratowych wszystkich liczb.
+        // Wypis zawartość tej listy zaokrągloną do 2 m-ca po przecinku
+        List<Double> sqrtList = numbers.stream()
+                .map(integer -> sqrt(integer))
+                .collect(Collectors.toList());
+        System.out.println("sqrtList = " + sqrtList);
+        sqrtList.forEach(aDouble -> System.out.printf("%.2f ", aDouble));
 
+        // formatowanie wyjscia
 
     }
     
