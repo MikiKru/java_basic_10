@@ -9,6 +9,11 @@ public class ThreadLambda {
                     for (int i = 0; i < 10; i++){
                         System.out.println(Thread.currentThread().getName() +" "+(new Random().nextInt(21) - 10));
                         System.out.println(Thread.currentThread().getName() +" "+Thread.currentThread().getState());
+                        try {
+                            Thread.currentThread().sleep(500);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
         );
@@ -17,6 +22,11 @@ public class ThreadLambda {
                     for (int i = 0; i < 10; i++){
                         System.out.println(Thread.currentThread().getName() +" "+(new Random().nextInt(21) - 10));
                         System.out.println(Thread.currentThread().getName() +" "+Thread.currentThread().getState());
+                        try {
+                            Thread.currentThread().sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
         );
