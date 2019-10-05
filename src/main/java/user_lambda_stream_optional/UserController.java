@@ -30,6 +30,56 @@ public class UserController {
                 .ifPresent(user -> user.setRole(role));         // jeśli jest niepusty zmień role
                                                                 // jeśli jest null -> nic nie rób
     }
+    // metoda sprawdzająca status użytkownika status zwraca boolean
+    public Boolean getUserStatus(String login){
+        // szukam użytkownika o określonym w argumentcie loginie i zwracam jego status
+        Optional<User> foundUser = users.stream()
+                .filter(user -> user.getLogin().equals(login))
+                .findAny();
+        // jeśli znaloziono użytkownika
+        if (foundUser.isPresent()){
+            // zwróć status znalezieonego użyhtkownika
+            return foundUser.get().getStatus();
+        }
+        // gdy nie znaleziono użytkownika
+        return false;
+    }
+    // metoda zwracająca użytkowanika po loginie
+    public Optional<User> getUserByLogin(String login){
+        return users.stream().filter(user -> user.getLogin().equals(login)).findAny();
+    }
+    // metoda logująca użytkownika którego status jest true
+    public Boolean loginUserCustom(String login, String password){
+        // sprawdzenie aktywności
+        if(getUserStatus(login)){
+            // metoda logująca użytkownika zwraca true lub false
+            if(loginUser(login, password)){
+                // zwiększam logincounter na 3
+                User user = getUserByLogin(login).get();
+                user.setLoginCounter(3);
+                System.out.println("ZALOGOWANO: "+ user);
+                return true;
+            } else {
+                Optional<User> userOptional = getUserByLogin(login);
+                // gdy podałem dobry login i błędne hasło
+                if (userOptional.isPresent()){
+                    User user = userOptional.get();
+                    user.setLoginCounter(user.getLoginCounter() - 1);
+                    // gdy pomyliłem się 3 razy dla tego samego loginu
+                    if(user.getLoginCounter() <= 0){
+                        // zablokowanie konta
+                        user.setStatus(false);
+                        System.out.println("KONTO ZABLOKOWANE");
+                    }
+                    System.out.println("BŁĄD LOGOWANIA");
+                    return false;
+                }
+                return false;
+            }
+        }
+        // gdy użytkownik jest nieaktywny
+        return false;
+    }
 
     public static void main(String[] args) {
         UserController userController = new UserController();
@@ -43,5 +93,12 @@ public class UserController {
         userController.setRoleToUserByLogin("a",Role.ADMIN);
         userController.setRoleToUserByLogin("abc",Role.ADMIN);
         userController.getAllUsers();
+
+        userController.loginUserCustom("c","c");
+        userController.loginUserCustom("c","e");
+        userController.loginUserCustom("c","e");
+        userController.loginUserCustom("c","e");
+        userController.loginUserCustom("c","e");
+
     }
 }
