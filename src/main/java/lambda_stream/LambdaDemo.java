@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+import static java.lang.Math.floor;
 import static java.lang.Math.sqrt;
 
 
@@ -61,8 +62,11 @@ public class LambdaDemo {
                 .collect(Collectors.toList());
         System.out.println("sqrtList = " + sqrtList);
         sqrtList.forEach(aDouble -> System.out.printf("%.2f ", aDouble));
-
+        System.out.println();
         // formatowanie wyjscia
+        System.out.printf("Mam na imię: %s. Mam %d lat. Moje wynagrodzenie wynosi: %.2f zł",
+                "Adam", 25, floor(100 *12000.1888888)/100);
+
 
     }
     
