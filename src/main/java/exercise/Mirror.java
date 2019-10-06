@@ -35,5 +35,10 @@ public class Mirror {
         System.out.println(new Mirror().checkTextString("ABBBAS"));
         System.out.println(new Mirror().checkTextStringBuffer("ABBBAS"));
         System.out.println(new Mirror().checkTextStringBuffer("ABBBA"));
+        // wyrażenie 3-arg
+        // warunek ? wartość zwracana gry jest true : wartośćzwracana gdy jest false
+        String text = "abbas";
+        String result = new Mirror().checkTextStringBuffer(text.toUpperCase()) ? "palindrom" : "nie palindrom";
+        System.out.printf("Twój napis: %s %s", text, result);
     }
 }
