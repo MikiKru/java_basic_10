@@ -17,12 +17,12 @@ public class Clock {
                 () -> {
                     while(true) {
                         // zapisujemy reprezentację czasu do String
-                        String clock = LocalTime.now().format(DateTimeFormatter.ofPattern("kk:mm:ss"));
+                        String clock = LocalTime.now().format(DateTimeFormatter.ofPattern("kk:mm:ss.S"));
                         // wyświetlamy na konsoli string XX:XX:XX
-                        System.out.println(clock);
+                        System.out.printf(clock);
                         try {
-                            // usypiamy wątkek na czas 1000ms -> 1s
-                            Thread.currentThread().sleep(100);
+                            // usypiamy wątkek na czas 100ms -> 0.1s
+                            Thread.currentThread().sleep(10);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }

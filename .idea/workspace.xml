@@ -41,14 +41,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/thread_demo/Clock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="24" column="60" lean-forward="true" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
+            <state relative-caret-position="483">
+              <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/exercise/Mirror.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -93,6 +102,7 @@
         <option value="$PROJECT_DIR$/src/main/java/thread_demo/MT.java" />
         <option value="$PROJECT_DIR$/src/main/java/thread_demo/ClockDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/thread_demo/Clock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/exercise/Mirror.java" />
       </list>
     </option>
   </component>
@@ -138,14 +148,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Java_basic_10" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java_basic_10" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="thread_demo" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -157,7 +159,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570347106309" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570349033526" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -178,7 +180,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ClockDemo">
+  <component name="RunManager" selected="Application.Mirror">
     <configuration name="Clock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="thread_demo.Clock" />
       <module name="Java_basic_10" />
@@ -218,12 +220,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyThreradRunnable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread_demo.MyThreradRunnable" />
+    <configuration name="Mirror" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exercise.Mirror" />
       <module name="Java_basic_10" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="thread_demo.*" />
+          <option name="PATTERN" value="exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -246,11 +248,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClockDemo" />
+        <item itemvalue="Application.Mirror" />
         <item itemvalue="Application.Clock" />
+        <item itemvalue="Application.ClockDemo" />
         <item itemvalue="Application.MT" />
         <item itemvalue="Application.ThreadLambda" />
-        <item itemvalue="Application.MyThreradRunnable" />
       </list>
     </recent_temporary>
   </component>
@@ -264,15 +266,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570258627339</updated>
-      <workItem from="1570258630260" duration="25405000" />
+      <workItem from="1570258630260" duration="27302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25405000" />
+    <option name="totallyTimeSpent" value="27302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -289,7 +292,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.09915014" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.14872521" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -425,11 +428,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/thread_demo/Clock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="24" column="60" lean-forward="true" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
+        <state relative-caret-position="483">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exercise/Mirror.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
         </state>
       </provider>
     </entry>
